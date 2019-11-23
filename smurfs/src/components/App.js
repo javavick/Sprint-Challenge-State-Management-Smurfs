@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchData, submitForm } from "../actions";
+import { fetchData, submitForm, deleteSmurf } from "../actions";
 
 import "./App.css";
 
@@ -16,7 +16,7 @@ const App = (props) => {
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
       {props.isFetching && <p>LOADING</p>}
-      <Smurfs data={props.data} />
+      <Smurfs deleteSmurf={props.deleteSmurf} data={props.data} />
       <Form submitForm={props.submitForm} />
     </div>
   );
@@ -30,4 +30,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchData, submitForm })(App);
+export default connect(mapStateToProps, { fetchData, submitForm, deleteSmurf })(
+  App
+);

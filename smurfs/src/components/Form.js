@@ -25,6 +25,7 @@ const Form = (props) => {
       <label>
         Name: <span></span>
         <input
+          required
           type="text"
           id="nameInput"
           name="name"
@@ -35,6 +36,7 @@ const Form = (props) => {
       <label>
         Age: <span></span>
         <input
+          required
           type="number"
           id="ageInput"
           name="age"
@@ -45,6 +47,7 @@ const Form = (props) => {
       <label>
         Height: <span></span>
         <input
+          required
           type="text"
           id="heightInput"
           name="height"

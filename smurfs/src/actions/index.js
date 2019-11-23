@@ -19,3 +19,10 @@ export const submitForm = (data) => (dispatch) => {
     .then((res) => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
     .catch((err) => dispatch({ type: FETCH_FAIL, payload: err }));
 };
+
+export const deleteSmurf = (id) => (dispatch) => {
+  axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
+    .then((res) => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
+    .catch((err) => dispatch({ type: FETCH_FAIL, payload: err }));
+};
