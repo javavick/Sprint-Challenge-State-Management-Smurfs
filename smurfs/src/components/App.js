@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { fetchData, submitForm } from "../actions";
+
 import "./App.css";
+
 import Smurfs from "./Smurfs.js";
-import { fetchData } from "../actions";
+import Form from "./Form.js";
 
 const App = (props) => {
   useEffect(() => {
@@ -14,6 +17,7 @@ const App = (props) => {
       <h1>SMURFS! 2.0 W/ Redux</h1>
       {props.isFetching && <p>LOADING</p>}
       <Smurfs data={props.data} />
+      <Form submitForm={props.submitForm} />
     </div>
   );
 };
@@ -26,4 +30,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchData })(App);
+export default connect(mapStateToProps, { fetchData, submitForm })(App);

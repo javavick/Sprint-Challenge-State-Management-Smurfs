@@ -11,3 +11,11 @@ export const fetchData = () => (dispatch) => {
     .then((res) => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
     .catch((err) => dispatch({ type: FETCH_FAIL, payload: err }));
 };
+
+export const submitForm = (data) => (dispatch) => {
+  dispatch({ type: FETCH_START });
+  axios
+    .post("http://localhost:3333/smurfs", data)
+    .then((res) => dispatch({ type: FETCH_SUCCESS, payload: res.data }))
+    .catch((err) => dispatch({ type: FETCH_FAIL, payload: err }));
+};

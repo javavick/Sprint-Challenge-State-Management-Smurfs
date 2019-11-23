@@ -3,7 +3,7 @@ import Smurf from "./Smurf.js";
 
 const Smurfs = (props) => {
   return props.data.map((item) => {
-    return <Smurf smurf={item} />;
+    return <Smurf key={item.id} smurf={item} />;
   });
 };
 
